@@ -15,8 +15,11 @@ describe('AppController', () => {
     });
 
     describe('root', () => {
-        it('should return "Hello World!"', () => {
-            expect(appController.getHello()).toBe('Hello World!');
+        it('should return the correct JSON response', () => {
+            const response = appController.getHello();
+            expect(response).toHaveProperty('email', 'stationphast@gmail.com');
+            expect(response).toHaveProperty('current_time');
+            expect(response).toHaveProperty('github_url', 'https://github.com/Phastboy/first_hng_task');
         });
     });
 });

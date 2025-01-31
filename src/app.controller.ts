@@ -6,7 +6,12 @@ export class AppController {
     constructor(private readonly appService: AppService) {}
 
     @Get()
-    getHello(): string {
-        return this.appService.getHello();
+    getHello(): { email: string; current_time: string; github_url: string } {
+        const current_time = new Date().toISOString();
+        return {
+            email: 'stationphast@gmail.com',
+            current_time,
+            github_url: 'https://github.com/Phastboy/first_hng_task',
+        };
     }
 }

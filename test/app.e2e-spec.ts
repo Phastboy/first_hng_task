@@ -20,6 +20,10 @@ describe('AppController (e2e)', () => {
         return request(app.getHttpServer())
             .get('/')
             .expect(200)
-            .expect('Hello World!');
+            .expect((res) => {
+                expect(res.body).toHaveProperty('email', 'stationphast@gmail.com');
+                expect(res.body).toHaveProperty('current_time');
+                expect(res.body).toHaveProperty('github_url', 'https://github.com/Phastboy/first_hng_task');
+            });
     });
 });
