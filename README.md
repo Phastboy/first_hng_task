@@ -117,3 +117,38 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+## Project Description
+
+This project is a simple NestJS application that provides a single endpoint (`/`) which returns a JSON response containing the email, current time in ISO 8601 format (UTC), and GitHub URL.
+
+## Setup Instructions
+
+1. Clone the repository:
+```bash
+$ git clone https://github.com/Phastboy/first_hng_task.git
+$ cd first_hng_task
+```
+
+2. Install the dependencies:
+```bash
+$ npm install
+```
+
+3. Start the application:
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
+4. Access the endpoint:
+Open your browser or use a tool like `curl` or `Postman` to access the endpoint:
+```
+http://localhost:3000/
+```
