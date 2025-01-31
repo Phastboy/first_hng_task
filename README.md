@@ -152,3 +152,13 @@ Open your browser or use a tool like `curl` or `Postman` to access the endpoint:
 ```
 http://localhost:3000/
 ```
+
+## API Documentation
+
+The API documentation is available at the `/docs` endpoint. You can access it by opening your browser and navigating to:
+
+```
+http://localhost:3000/docs
+```
+
+The documentation includes information about the available endpoints, request/response formats, and other details to help you interact with the API.
