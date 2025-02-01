@@ -25,8 +25,8 @@ describe('AppController (e2e)', () => {
                     'email',
                     'stationphast@gmail.com',
                 );
-                expect(res.body).toHaveProperty('current_time');
-                expect(res.body.current_time).toMatch(
+                expect(res.body).toHaveProperty('current_datetime');
+                expect(res.body.current_datetime).toMatch(
                     /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/,
                 );
                 expect(res.body).toHaveProperty(

@@ -18,8 +18,8 @@ describe('AppController', () => {
         it('should return the correct JSON response', () => {
             const response = appController.getHello();
             expect(response).toHaveProperty('email', 'stationphast@gmail.com');
-            expect(response).toHaveProperty('current_time');
-            expect(response.current_time).toMatch(
+            expect(response).toHaveProperty('current_datetime');
+            expect(response.current_datetime).toMatch(
                 /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/,
             );
             expect(response).toHaveProperty(
