@@ -6,7 +6,7 @@ export class AppController {
     constructor(private readonly appService: AppService) {}
 
     @Get()
-    getHello(): { email: string; current_time: string; github_url: string } {
+    getHello(): { email: string; current_datetime: string; github_url: string } {
         return this.appService.getHello();
     }
 }
