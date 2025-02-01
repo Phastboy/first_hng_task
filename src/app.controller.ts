@@ -7,11 +7,6 @@ export class AppController {
 
     @Get()
     getHello(): { email: string; current_time: string; github_url: string } {
-        const current_time = new Date().toISOString();
-        return {
-            email: 'stationphast@gmail.com',
-            current_time,
-            github_url: 'https://github.com/Phastboy/first_hng_task',
-        };
+        return this.appService.getHello();
     }
 }

@@ -26,6 +26,9 @@ describe('AppController (e2e)', () => {
                     'stationphast@gmail.com',
                 );
                 expect(res.body).toHaveProperty('current_time');
+                expect(res.body.current_time).toMatch(
+                    /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/,
+                );
                 expect(res.body).toHaveProperty(
                     'github_url',
                     'https://github.com/Phastboy/first_hng_task',

@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
     getHello(): { email: string; current_time: string; github_url: string } {
-        const current_time = new Date().toISOString();
+        const current_time = new Date().toISOString().split('.')[0] + 'Z';
         return {
             email: 'stationphast@gmail.com',
             current_time,
