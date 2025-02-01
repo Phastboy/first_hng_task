@@ -21,9 +21,15 @@ describe('AppController (e2e)', () => {
             .get('/')
             .expect(200)
             .expect((res) => {
-                expect(res.body).toHaveProperty('email', 'stationphast@gmail.com');
+                expect(res.body).toHaveProperty(
+                    'email',
+                    'stationphast@gmail.com',
+                );
                 expect(res.body).toHaveProperty('current_time');
-                expect(res.body).toHaveProperty('github_url', 'https://github.com/Phastboy/first_hng_task');
+                expect(res.body).toHaveProperty(
+                    'github_url',
+                    'https://github.com/Phastboy/first_hng_task',
+                );
             });
     });
 });

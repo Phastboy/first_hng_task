@@ -9,7 +9,7 @@ import { RequestLoggerMiddleware } from './request-logger/request-logger.middlew
     providers: [AppService],
 })
 export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(RequestLoggerMiddleware).forRoutes('*');
-  }
+    configure(consumer: MiddlewareConsumer) {
+        consumer.apply(RequestLoggerMiddleware).forRoutes('*');
+    }
 }

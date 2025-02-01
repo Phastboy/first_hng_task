@@ -30,7 +30,11 @@ describe('RequestLoggerMiddleware', () => {
     });
 
     it('should log request body if present', () => {
-        const req = { method: 'POST', originalUrl: '/submit', body: { name: 'John Doe' } } as any;
+        const req = {
+            method: 'POST',
+            originalUrl: '/submit',
+            body: { name: 'John Doe' },
+        } as any;
         const res = {} as any;
         const next = jest.fn();
 
@@ -42,26 +46,38 @@ describe('RequestLoggerMiddleware', () => {
     });
 
     it('should not log body if it is empty', () => {
-        const req = { method: 'DELETE', originalUrl: '/remove', body: {} } as any;
+        const req = {
+            method: 'DELETE',
+            originalUrl: '/remove',
+            body: {},
+        } as any;
         const res = {} as any;
         const next = jest.fn();
 
         middleware.use(req, res, next);
 
         expect(loggerSpy).toHaveBeenCalledWith('Request: DELETE /remove');
-        expect(loggerSpy).not.toHaveBeenCalledWith(expect.stringContaining('Body:'));
+        expect(loggerSpy).not.toHaveBeenCalledWith(
+            expect.stringContaining('Body:'),
+        );
         expect(next).toHaveBeenCalled();
     });
 
     it('should handle undefined request body', () => {
-        const req = { method: 'GET', originalUrl: '/test', body: undefined } as any;
+        const req = {
+            method: 'GET',
+            originalUrl: '/test',
+            body: undefined,
+        } as any;
         const res = {} as any;
         const next = jest.fn();
 
         middleware.use(req, res, next);
 
         expect(loggerSpy).toHaveBeenCalledWith('Request: GET /test');
-        expect(loggerSpy).not.toHaveBeenCalledWith(expect.stringContaining('Body:'));
+        expect(loggerSpy).not.toHaveBeenCalledWith(
+            expect.stringContaining('Body:'),
+        );
         expect(next).toHaveBeenCalled();
     });
 });
